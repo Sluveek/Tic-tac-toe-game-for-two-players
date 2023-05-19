@@ -1,59 +1,65 @@
-print("*" * 10, " Tic-tac-toe game for two players ", "*" * 10)
+from colorama import just_fix_windows_console
+from colorama import Back, Fore, Style
+from colorama import init
 
-board = list(range(1, 10))
+print(Fore.RED + "*" * 10, " Tic-tac-toe game for two players ", "*" * 10)
 
-def draw_board(board):
-    print("-" * 13)
+
+table = list(range(1, 10))
+
+def table_draw(table):
+    print("—" * 13)
     for i in range(3):
-        print("|", board[0 + i * 3], "|", board[1 + i * 3], "|", board[2 + i * 3], "|")
-        print("-" * 13)
+        print("¦", table[0 + i * 3], "¦", table[1 + i * 3], "¦", table[2 + i * 3],"¦")
+        print("—" * 13)
 
-def take_input(player_token):
+def input_get(choice_player):
     valid = False
     while not valid:
-        player_answer = input("Where will we put " + player_token + "? ")
+        input_player = input("Where will we put " + choice_player + "? ")
         try:
-            player_answer = int(player_answer)
+            input_player = int(input_player)
         except ValueError:
             print("Invalid input. Are you sure you entered a number?")
             continue
-        if 1 <= player_answer <= 9:
-            if str(board[player_answer - 1]) not in "XO":
-                board[player_answer - 1] = player_token
+        if 1 <= input_player <= 9:
+            if str(table[input_player - 1]) not in "XO":
+                table[input_player - 1] = choice_player
                 valid = True
             else:
                 print("This cell is already taken!")
         else:
-            print("Invalid input. Enter a number from 1 to 12.")
+            print("Invalid input. Enter a number from 1 to 9.")
 
-def check_win(board):
-    win_coord = ((0,1,2 ), (3,4,5), (6,7,8), (0,3,6), (1,4,7), (2,5,8), (0,4,8), (2,4,6))
-    for each in win_coord:
-        if board[each[0]] == board[each[1]] == board[each[2]]:
-            return board[each[0]]
+def winTest(table):
+    winString = ((0,1,2 ), (3,4,5), (6,7,8), (0,3,6), (1,4,7), (2,5,8), (0,4,8), (2,4,6))
+    for each in winString:
+        if table[each[0]] == table[each[1]] == table[each[2]]:
+            return table[each[0]]
     return False
 
-def main(board):
+def main(table):
     counter = 0
     win = False
     while not win:
-        draw_board(board)
+        table_draw(table)
         if counter % 2 == 0:
-            take_input("X")
+            input_get("X")
         else:
-            take_input("O")
+            input_get("O")
         counter += 1
         if counter >= 4:
-            tmp = check_win(board)
+            tmp = winTest(table)
             if tmp:
                 print(tmp, "Won!")
                 win = True
                 break
+
         if counter == 9:
             print("Equality")
             break
-    draw_board(board)
+    table_draw(table)
 
-main(board)
+main(table)
 
-input("Press Enter to exit!")
+input("Press enter to exit!")
