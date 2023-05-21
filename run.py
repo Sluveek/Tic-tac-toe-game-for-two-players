@@ -1,4 +1,3 @@
-from colorama import just_fix_windows_console
 from colorama import Back, Fore, Style
 from colorama import init
 import pyfiglet
@@ -10,14 +9,14 @@ player_scores = {"X": 0, "O": 0}
 score_goal = 10
 
 
-def create(t):
+def create(mass):
     print("—" * 13)
     for i in range(3):
-        print("¦", t[0 + i * 3], "¦",  t[1 + i * 3],  "¦",  t[2 + i * 3],  "¦")
+        print(f"¦ {mass[0 + i * 3]} ¦ {mass[1 + i * 3]} ¦ {mass[2 + i * 3]} ¦")
         print("—" * 13)
 
 
-def input_get(choice_player, t):
+def input_get(choice_player, mass):
     valid = None
     while not valid:
         input_player = input("Where will we put " + choice_player + "? ")
@@ -27,8 +26,8 @@ def input_get(choice_player, t):
             print("Invalid input. Are you sure you entered a number?")
             continue
         if 1 <= input_player <= 9:
-            if str(t[input_player - 1]) not in "XO":
-                t[input_player - 1] = choice_player
+            if str(mass[input_player - 1]) not in "XO":
+                mass[input_player - 1] = choice_player
                 valid = True
             else:
                 print("This cell is already taken!")
@@ -36,14 +35,14 @@ def input_get(choice_player, t):
             print("Invalid input. Enter a number from 1 to 9.")
 
 
-def winTest(t):
+def winTest(mass):
     winString = ((0, 1, 2), (3, 4, 5), (6, 7, 8),
                  (0, 3, 6), (1, 4, 7), (2, 5, 8),
                  (0, 4, 8), (2, 4, 6))
 
     for each in winString:
-        if t[each[0]] == t[each[1]] == t[each[2]]:
-            return t[each[0]]
+        if mass[each[0]] == mass[each[1]] == mass[each[2]]:
+            return mass[each[0]]
     return None
 
 
@@ -60,18 +59,18 @@ def play_again_prompt():
 
 def main():
     while True:
-        t = list(range(1, 10))
+        mass = list(range(1, 10))
         count = 0
         win = None
         while not win:
-            create(t)
+            create(mass)
             if count % 2 == 0:
-                input_get("X", t)
+                input_get("X", mass)
             else:
-                input_get("O", t)
+                input_get("O", mass)
             count += 1
             if count >= 4:
-                tmp = winTest(t)
+                tmp = winTest(mass)
                 if tmp:
                     print(tmp, "Won!")
 
@@ -89,7 +88,7 @@ def main():
             if count == 9:
                 print("Equality")
                 break
-        create(t)
+        create(mass)
         print("Scores:")
         for player, score in player_scores.items():
             print("Player", player, "Score:", score)
