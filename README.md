@@ -29,3 +29,12 @@ Anyone who enjoys playing strategy games.
 -After each game, the scores will be displayed, and players have the option to play again or exit.
 
 ![img](/readme-img/Win.png)
+
+## Bugs and Fixes
+---
+### Code checked in Pythonchecker.com, following has been adjusted.
+- Additional variables were added to have line > 80 characters
+- Linter-mistakes corrected, mainly "trailing whitespace"
+- 96 % in Pythonchecker (Not recognizing whitespace)
+
+![img](/readme-img/Test.png)
