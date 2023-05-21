@@ -1,5 +1,4 @@
-from colorama import Back, Fore, Style
-from colorama import init
+from colorama import Fore
 import pyfiglet
 
 result = pyfiglet.figlet_format("Tic-tac-toe for two players", font="digital")
