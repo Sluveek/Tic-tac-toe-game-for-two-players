@@ -1,7 +1,7 @@
 # Tic-tac-toe for Two Players
 ## Introduction
 
-This is a command-line implementation of the classic Tic-tac-toe game designed for two players. The players take turns marking their symbols ('X' or 'O') on a 3x3 grid, aiming to get three of their symbols in a horizontal, vertical, or diagonal row. The game continues until one player wins or the board is filled
+This is a command-line implementation of the classic Tic-tac-toe game designed for two players. The players take turns marking their symbols ('X' or 'O') on a 3x3 grid, aiming to get three of their symbols in a horizontal, vertical, or diagonal row. The game continues until one player wins or the board is filled.
 
 ## Site Goals
 
