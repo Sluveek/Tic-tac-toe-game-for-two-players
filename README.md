@@ -38,3 +38,14 @@ Anyone who enjoys playing strategy games.
 - 96 % in Pythonchecker (Not recognizing whitespace)
 
 ![img](/readme-img/Test.png)
+
+## Technologies
+- Python, Main language used to build this application.
+
+## Deployment
+---
+The site was created using the Visual Studio Code editor and pushed to github to the repository Tic-tac-toe for Two Players.
+
+### Heroku Deployment
+
+Live Link: https://tic-tac-toe-for-two-players.herokuapp.com/
