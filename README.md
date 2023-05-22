@@ -18,15 +18,15 @@ Anyone who enjoys playing strategy games.
 
 - Players take turns entering the number corresponding to the cell where they want to place their symbol ('X' or 'O').
 
--The game will validate the input and notify the players if the selected cell is already occupied or if the input is invalid.
+- The game will validate the input and notify the players if the selected cell is already occupied or if the input is invalid.
 
--If a player successfully places their symbols in a winning pattern, they will be declared the winner.
+- If a player successfully places their symbols in a winning pattern, they will be declared the winner.
 
--The game keeps track of scores for each player, and the first player to reach the specified score goal wins the game.
+- The game keeps track of scores for each player, and the first player to reach the specified score goal wins the game.
 
 ![img](/readme-img/Score.png)
 
--After each game, the scores will be displayed, and players have the option to play again or exit.
+- After each game, the scores will be displayed, and players have the option to play again or exit.
 
 ![img](/readme-img/Win.png)
 
